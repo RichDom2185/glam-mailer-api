@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/RichDom2185/glam-mailer-api/handlers"
 	"github.com/RichDom2185/glam-mailer-api/models"
@@ -38,8 +39,18 @@ func main() {
 		fmt.Fprintf(w, cleaned)
 	})
 
-	fmt.Println("Server started...")
-	err := http.ListenAndServe("127.0.0.1:8080", r)
+	appMode := os.Getenv("GO_ENV")
+	if appMode == "" {
+		appMode = "production"
+	}
+	fmt.Printf("Server started in %s mode!", appMode)
+
+	host := ""
+	if appMode == "development" {
+		host = "127.0.0.1"
+	}
+
+	err := http.ListenAndServe(host+":8080", r)
 	if err != nil {
 		log.Fatalln(err)
 	}
