@@ -33,7 +33,8 @@ func main() {
 		}
 
 		// TODO: Handle data using models
-		inlined := handlers.InlineCSS(params.HTML)
+		css := handlers.GenerateRequiredTailwindStyles(params.HTML)
+		inlined := handlers.InlineCSS("<style>\n" + css + "\n</style>\n" + params.HTML)
 		substituted := handlers.SubstituteCSSVariables(inlined)
 		cleaned := handlers.RemoveStyleTags(substituted)
 		fmt.Fprintf(w, cleaned)
