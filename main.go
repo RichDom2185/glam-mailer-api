@@ -40,8 +40,9 @@ func main() {
 		// TODO: Handle data using models
 		tailwind := handlers.GenerateRequiredTailwindStyles(params.HTML)
 		inlined := handlers.InlineCSS("<style>\n" + string(syntaxHighlight) + tailwind + "\n</style>\n" + params.HTML)
-		substituted := handlers.SubstituteCSSVariables(inlined)
-		cleaned := handlers.RemoveStyleTags(substituted)
+		substitutedCSS := handlers.SubstituteCSSVariables(inlined)
+		substitutedSVG := handlers.ConvertSVGToImg(substitutedCSS)
+		cleaned := handlers.RemoveStyleTags(substitutedSVG)
 		fmt.Fprintf(w, cleaned)
 	})
 
