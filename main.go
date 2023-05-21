@@ -32,9 +32,14 @@ func main() {
 			log.Fatalln(err)
 		}
 
+		syntaxHighlight, err := os.ReadFile("assets/css/github.css")
+		if err != nil {
+			log.Fatalln(err)
+		}
+
 		// TODO: Handle data using models
-		css := handlers.GenerateRequiredTailwindStyles(params.HTML)
-		inlined := handlers.InlineCSS("<style>\n" + css + "\n</style>\n" + params.HTML)
+		tailwind := handlers.GenerateRequiredTailwindStyles(params.HTML)
+		inlined := handlers.InlineCSS("<style>\n" + string(syntaxHighlight) + tailwind + "\n</style>\n" + params.HTML)
 		substituted := handlers.SubstituteCSSVariables(inlined)
 		cleaned := handlers.RemoveStyleTags(substituted)
 		fmt.Fprintf(w, cleaned)
