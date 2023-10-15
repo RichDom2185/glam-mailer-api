@@ -16,7 +16,7 @@ require (
 	github.com/evanw/esbuild v0.15.13 // indirect
 	github.com/gorilla/css v1.0.0 // indirect
 	go.kuoruan.net/v8go-polyfills v0.5.1-0.20220727011656-c74c5b408ebd // indirect
-	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sys v0.8.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
 	rogchap.com/v8go v0.7.0 // indirect
 )
