@@ -6,7 +6,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.8.1
 	github.com/RichDom2185/go-tailwind v0.0.0-20230520082046-96fb28bd46ae
 	github.com/aymerick/douceur v0.2.0
-	github.com/go-chi/chi/v5 v5.2.2
+	github.com/go-chi/chi/v5 v5.2.4
 	github.com/go-chi/cors v1.2.1
 	github.com/livebud/js v0.0.0-20230416184227-ef633a94787b
 )
