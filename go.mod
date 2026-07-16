@@ -1,6 +1,6 @@
 module github.com/RichDom2185/glam-mailer-api
 
-go 1.23.0
+go 1.25.0
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.1
@@ -16,7 +16,7 @@ require (
 	github.com/evanw/esbuild v0.15.13 // indirect
 	github.com/gorilla/css v1.0.0 // indirect
 	go.kuoruan.net/v8go-polyfills v0.5.1-0.20220727011656-c74c5b408ebd // indirect
-	golang.org/x/net v0.38.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/net v0.55.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
 	rogchap.com/v8go v0.7.0 // indirect
 )
